@@ -60,7 +60,7 @@ def main():
 
 
     # Model Stuff
-    using_model_version = True
+    using_model_version = False
     if using_model_version:
         st.write('## Using Pre-trained Models')
 
