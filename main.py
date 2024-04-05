@@ -1,6 +1,7 @@
 
 import streamlit as st
 import pandas as pd
+import joblib
 
 def main():
     # Simple Write Commands
@@ -58,17 +59,41 @@ def main():
     st.write(f'Math aint mathin: {input_number_1 + input_number_2}')
 
 
+    # Model Stuff
+    using_model_version = True
+    if using_model_version:
+        st.write('## Using Pre-trained Models')
 
-    # Puting it together
-    st.write('\n')
-    st.write('\n')
-    st.write('\n')
-    st.write('# Puting it together')
-    
+        # Load Model
+        pipeline = joblib.load('./model-dev/RandomForestClassifier.pkl')
 
+        # Get and validate user input
+        pclass = st.radio('Pclass', [1, 2, 3])
+        sex = st.radio('Sex', ['male', 'female'])
+        age = st.number_input('Age')
+        sibsp = st.number_input('SibSp', step=1)
+        parch = st.number_input('Parch', step=1)
+        fare = st.number_input('Fare')
+        embarked  = st.radio('Embarked', ['C', 'Q', 'S'])
 
-    
+        st.write('### Prediction')
+        if all([pclass, sex, age, fare, embarked]):
 
+            # Prediction
+            user_form = pd.DataFrame({
+                'Pclass': [pclass],
+                'Sex': [sex],
+                'Age': [age],
+                'SibSp': [sibsp],
+                'Parch': [parch],
+                'Fare': [fare],
+                'Embarked': [embarked]
+            })
+            pred = pipeline.predict(user_form)
+            st.write('Random Forest Classifier Prediction: ', 'Surived' if pred else 'Ded asf')
+
+        else:
+            st.write('Please fill out form above.')
     
 
 if __name__ == "__main__":
