@@ -1,0 +1,10 @@
+
+# Python Stuff
+.ipynb_notebooks
+__pycache__
+
+# Enviroment
+venv
+myenv
+.env
+secrets.json
