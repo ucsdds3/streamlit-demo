@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 3. You may need to install `streamlit` and `joblib` at this time. Even though it is in the `requirements.txt` it sometimes will not install.
 ```bash
-pip install streamlib joblib
+pip install streamlit joblib
 ```
 4. Launch you local server by running the following.
 ```
