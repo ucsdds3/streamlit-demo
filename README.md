@@ -3,11 +3,11 @@
 This repository contains files for the Project Website Workshop for DataHacks 2024. This workshop is targeted towards students who want to create website for their project and have a working model embedded inside.
 
 ## Installation 
-1. Clone the repo.
+1. (Fork and) Clone the repo.
 2. Create a virtual environment and install required packages as specified in the `requirements.txt`.
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # 'source venv/Scripts/activate' if on Windows
+python3 -m venv your_env
+source your_env/bin/activate  # 'source your_env/Scripts/activate' if on Windows
 pip install -r requirements.txt
 ```
 3. Launch you local server by running the following.
@@ -59,6 +59,7 @@ parch = st.number_input('Parch', step=1)
 fare = st.number_input('Fare')
 embarked  = st.radio('Embarked', ['C', 'Q', 'S'])
 ```
+4. Deploy using the `Deploy` button at the top right.
 
 ## License
 This project is licensed under the MIT License. See `LICENSE` for more information.
