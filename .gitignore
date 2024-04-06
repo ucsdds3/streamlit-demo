@@ -6,5 +6,6 @@ __pycache__
 # Enviroment
 venv
 myenv
+your_env
 .env
 secrets.json
