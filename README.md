@@ -10,7 +10,11 @@ python3 -m venv your_env
 source your_env/bin/activate  # 'source your_env/Scripts/activate' if on Windows
 pip install -r requirements.txt
 ```
-3. Launch you local server by running the following.
+3. You may need to install `streamlit` and `joblib` at this time. Even though it is in the `requirements.txt` it sometimes will not install.
+```bash
+pip install streamlib joblib
+```
+4. Launch you local server by running the following.
 ```
 streamlit run main.py
 ```
